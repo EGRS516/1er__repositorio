@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Proyecto Avanzado — Demo</title>
+  <link rel="stylesheet" href="avanzado.css" />
+  <meta name="theme-color" content="#ffffff" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="#/">Avanzado</a>
+      <nav class="nav" aria-label="Principal">
+        <a href="#/">Inicio</a>
+        <a href="#/repos">Repos</a>
+        <a href="#/about">Acerca</a>
+        <a href="#/contact">Contacto</a>
+      </nav>
+      <div class="header-actions">
+        <button id="themeToggle" aria-label="Alternar tema">🌙</button>
+        <button id="navToggle" class="nav-toggle" aria-label="Abrir menú">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="app">
+    <!-- Home -->
+    <section id="home" class="view container">
+      <div class="hero">
+        <h1>Demo avanzado</h1>
+        <p>SPA ligera, fetch a la API de GitHub, modo oscuro y soporte offline.</p>
+        <div class="hero-actions">
+          <a class="btn primary" href="#/repos">Ver Repos</a>
+          <a class="btn outline" href="#/contact">Contactar</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Repos -->
+    <section id="repos" class="view container" hidden>
+      <div class="panel">
+        <header class="panel-header">
+          <h2>Repositorios GitHub</h2>
+          <div class="controls">
+            <input id="username" placeholder="Usuario GitHub (ej. octocat)" />
+            <button id="fetchBtn" class="btn">Cargar</button>
+          </div>
+        </header>
+        <div class="search">
+          <input id="repoFilter" placeholder="Filtrar por nombre..." />
+        </div>
+        <div id="repoList" class="grid"></div>
+        <p id="repoStatus" class="muted"></p>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="view container" hidden>
+      <h2>Acerca</h2>
+      <p>Ejemplo con buenas prácticas: accesibilidad, almacenamiento local y PWA simple.</p>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="view container" hidden>
+      <h2>Contacto</h2>
+      <form id="contactForm" class="card" novalidate>
+        <label>Nombre<input id="cname" name="cname" required minlength="2" /></label>
+        <label>Email<input id="cemail" name="cemail" type="email" required /></label>
+        <label>Mensaje<textarea id="cmessage" name="cmessage" rows="4" required></textarea></label>
+        <div class="form-actions">
+          <button type="submit" class="btn primary">Enviar</button>
+          <button type="reset" class="btn">Limpiar</button>
+        </div>
+        <p id="contactStatus" aria-live="polite" class="muted"></p>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer container">
+    <small>© 2025 — Demo avanzado</small>
+  </footer>
+
+  <script type="module" src="js/app.js" defer></script>
+</body>
+</html>
